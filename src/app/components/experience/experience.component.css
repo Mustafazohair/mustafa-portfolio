@@ -1,0 +1,266 @@
+.experience {
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.section-header .section-label { justify-content: center; }
+.section-header .section-label::before { display: none; }
+.section-header .section-label::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-cyan);
+}
+.section-header .section-subtitle { margin: 0 auto; }
+
+/* ---- Timeline ---- */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(124, 58, 237, 0.4) 10%,
+    rgba(37, 99, 235, 0.4) 90%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 0 24px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.timeline-item.reveal-left .exp-card { grid-column: 1; grid-row: 1; }
+.timeline-item.reveal-left .timeline-connector { grid-column: 2; grid-row: 1; }
+
+.timeline-item.reveal-right .exp-card {
+  grid-column: 3;
+  grid-row: 1;
+}
+.timeline-item.reveal-right .timeline-connector {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.timeline-connector {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--th-bg);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  opacity: 0.3;
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+
+/* ---- Exp Card ---- */
+.exp-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exp-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.company-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  border: 1px solid var(--th-border);
+}
+
+.exp-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-top-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--th-t2);
+}
+
+.current-badge {
+  padding: 3px 10px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--th-t4);
+}
+
+.exp-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.exp-period, .exp-type, .exp-duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--th-t5);
+}
+
+.exp-separator { color: var(--th-t7); }
+
+.exp-desc {
+  font-size: 0.9rem;
+  color: var(--th-t4);
+  line-height: 1.7;
+}
+
+/* Achievements */
+.achievements-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--th-t6);
+  margin-bottom: 12px;
+  font-family: 'Fira Code', monospace;
+}
+
+.achievements-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.achievements-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--th-t3);
+  line-height: 1.6;
+}
+
+.achievement-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--th-border2);
+}
+
+/* Timeline End */
+.timeline-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  font-size: 0.85rem;
+  color: var(--th-t6);
+  font-family: 'Fira Code', monospace;
+}
+
+.timeline-dot-end {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--th-card-h);
+  border: 1px solid var(--th-border4);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .timeline::before { left: 20px; }
+
+  .timeline-item {
+    grid-template-columns: 40px 1fr;
+    gap: 0 16px;
+  }
+
+  .timeline-item.reveal-left .exp-card,
+  .timeline-item.reveal-right .exp-card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .timeline-item.reveal-left .timeline-connector,
+  .timeline-item.reveal-right .timeline-connector {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}

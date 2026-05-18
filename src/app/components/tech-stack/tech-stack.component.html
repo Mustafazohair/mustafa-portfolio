@@ -1,0 +1,37 @@
+<div class="tech-stack section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Tech Stack</span>
+      <h2 class="section-title">
+        My <span class="gradient-text">Technology Radar</span>
+      </h2>
+      <p class="section-subtitle">
+        The tools and frameworks I use to ship production-ready software.
+      </p>
+    </div>
+  </div>
+
+  <!-- Marquee Row 1 -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      @for (tech of track1; track $index) {
+        <div class="tech-pill">
+          <i [class]="tech.icon" [style.color]="tech.color"></i>
+          <span>{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Marquee Row 2 (reverse) -->
+  <div class="marquee-wrapper reverse">
+    <div class="marquee-track reverse-track">
+      @for (tech of track2; track $index) {
+        <div class="tech-pill">
+          <i [class]="tech.icon" [style.color]="tech.color"></i>
+          <span>{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

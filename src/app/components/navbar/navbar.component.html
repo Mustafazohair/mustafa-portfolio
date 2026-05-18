@@ -1,0 +1,63 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a class="nav-logo" (click)="scrollTo('#hero')">
+      <span class="logo-bracket lt">&lt;</span>
+      <span class="logo-text">MZ</span>
+      <span class="logo-bracket rt">/&gt;</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links">
+      @for (link of navLinks; track link.label) {
+        <li>
+          <a class="nav-link"
+             [class.active]="activeSection === link.href.replace('#', '')"
+             (click)="scrollTo(link.href)">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- CTA -->
+    <a class="btn btn-primary nav-cta" (click)="scrollTo('#contact')">
+      Hire Me
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      [class.toggling]="toggling"
+      (click)="cycleTheme()"
+      [title]="'Switch to ' + themeService.nextLabel + ' theme'"
+      [attr.aria-label]="'Switch to ' + themeService.nextLabel + ' theme'">
+      <span class="toggle-icon">{{ themeService.nextIcon }}</span>
+      <span class="toggle-ring"></span>
+    </button>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <ul>
+      @for (link of navLinks; track link.label) {
+        <li><a (click)="scrollTo(link.href)">{{ link.label }}</a></li>
+      }
+      <li>
+        <a class="mobile-cta" (click)="scrollTo('#contact')">Hire Me</a>
+      </li>
+      <li class="mobile-theme-row">
+        <button class="mobile-theme-btn" (click)="cycleTheme()">
+          <span>{{ themeService.nextIcon }}</span>
+          Switch to {{ themeService.nextLabel }}
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,152 @@
+.skills {
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.section-header .section-label {
+  justify-content: center;
+}
+.section-header .section-label::before { display: none; }
+.section-header .section-label::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-cyan);
+}
+
+/* ---- Categories Grid ---- */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.category-card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.category-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.category-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--th-t2);
+  flex: 1;
+}
+
+.category-line {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0.3;
+}
+
+/* ---- Skills List ---- */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-devicon {
+  font-size: 1.2rem;
+  width: 22px;
+  text-align: center;
+}
+
+.skill-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--th-t3);
+  flex: 1;
+}
+
+.skill-pct {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: var(--th-t5);
+  font-weight: 400;
+}
+
+.skill-bar {
+  height: 4px;
+  background: var(--th-border3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+/* ---- Extra Skills ---- */
+.extra-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  border: 1px dashed var(--th-border);
+  border-radius: 20px;
+}
+
+.extra-label {
+  font-size: 0.82rem;
+  color: var(--th-t6);
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}

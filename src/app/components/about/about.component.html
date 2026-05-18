@@ -1,0 +1,95 @@
+<div class="about section-padding">
+  <div class="container">
+
+    <!-- Centered Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label">About Me</span>
+      <h2 class="section-title">
+        Crafting Digital Solutions<br>
+        <span class="gradient-text">with Purpose</span>
+      </h2>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Photo Column -->
+      <div class="about-photo-col">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <img
+            src="assets/images/Mustafa_Image.jpg"
+            alt="Mustafa Zohair"
+            class="avatar-img"
+          />
+          <div class="avatar-badge">
+            <span class="dot-green"></span> Available
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Text -->
+      <div class="about-text reveal-left" style="transition-delay:0.1s">
+        <p class="body-text">
+          I'm a <strong>Junior .NET Developer</strong> at Centegy Technologies, with 1+ year
+          of hands-on experience building enterprise-grade web applications. My passion lies in
+          architecting clean, scalable solutions that solve real business problems.
+        </p>
+        <p class="body-text">
+          I specialize in the <strong>Microsoft ecosystem</strong> — ASP.NET Core Web APIs, Angular SPAs,
+          and SQL Server databases — while staying curious about emerging technologies
+          like AI/ML integrations and cloud-native architectures.
+        </p>
+        <p class="body-text">
+          When I'm not writing code, I'm exploring new patterns, contributing to team knowledge,
+          and pushing for better performance and cleaner architecture in every project.
+        </p>
+
+        <div class="about-actions">
+          <a href="assets/cv/MustafaResume.pdf" class="btn btn-primary" download="MustafaResume.pdf">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Highlights Grid -->
+      <div class="about-right">
+        <div class="highlights-grid">
+          @for (item of highlights; track item.title; let i = $index) {
+            <div class="highlight-card glass-card reveal" [style.transition-delay]="(i * 0.1) + 's'">
+              <div class="highlight-icon">{{ item.icon }}</div>
+              <h4 class="highlight-title">{{ item.title }}</h4>
+              <p class="highlight-desc">{{ item.desc }}</p>
+            </div>
+          }
+        </div>
+
+        <!-- Profile quick-stats -->
+        <div class="profile-card glass-card reveal">
+          <div class="profile-row">
+            <span class="profile-key">Location</span>
+            <span class="profile-val">Pakistan 🇵🇰</span>
+          </div>
+          <div class="profile-row">
+            <span class="profile-key">Role</span>
+            <span class="profile-val">Jr. .NET Developer</span>
+          </div>
+          <div class="profile-row">
+            <span class="profile-key">Company</span>
+            <span class="profile-val">Centegy Technologies</span>
+          </div>
+          <div class="profile-row">
+            <span class="profile-key">Focus</span>
+            <span class="profile-val">.NET · Angular · Cloud</span>
+          </div>
+          <div class="profile-row">
+            <span class="profile-key">Status</span>
+            <span class="profile-val available">
+              <span class="dot-green"></span> Open to opportunities
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

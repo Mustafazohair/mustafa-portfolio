@@ -1,0 +1,81 @@
+<div class="experience section-padding">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Experience</span>
+      <h2 class="section-title">
+        Where I've <span class="gradient-text">Made Impact</span>
+      </h2>
+      <p class="section-subtitle">
+        Real-world experience delivering production-grade software with measurable outcomes.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      @for (exp of experiences; track exp.company; let i = $index) {
+        <div class="timeline-item" [class.reveal-left]="i % 2 === 0" [class.reveal-right]="i % 2 !== 0"
+             [style.transition-delay]="(i * 0.15) + 's'">
+          <!-- Connector -->
+          <div class="timeline-connector">
+            <div class="timeline-dot" [style.background]="exp.color" [style.box-shadow]="'0 0 16px ' + exp.color"></div>
+          </div>
+
+          <!-- Card -->
+          <div class="exp-card glass-card">
+            <div class="exp-header">
+              <div class="company-logo" [style.background]="exp.color + '22'" [style.color]="exp.color">
+                {{ exp.logo }}
+              </div>
+              <div class="exp-meta">
+                <div class="exp-top-row">
+                  <h3 class="exp-role">{{ exp.role }}</h3>
+                  @if (exp.current) {
+                    <span class="current-badge">Current</span>
+                  }
+                </div>
+                <div class="exp-company">{{ exp.company }}</div>
+                <div class="exp-details">
+                  <span class="exp-period">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    {{ exp.period }}
+                  </span>
+                  <span class="exp-separator">·</span>
+                  <span class="exp-type">{{ exp.type }}</span>
+                  <span class="exp-separator">·</span>
+                  <span class="exp-duration">{{ exp.duration }}</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="exp-desc">{{ exp.description }}</p>
+
+            <div class="achievements">
+              <h4 class="achievements-title">Key Achievements</h4>
+              <ul class="achievements-list">
+                @for (item of exp.achievements; track item) {
+                  <li>
+                    <span class="achievement-dot" [style.background]="exp.color"></span>
+                    {{ item }}
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <div class="exp-tech">
+              @for (t of exp.tech; track t) {
+                <span class="tech-badge">{{ t }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- Timeline End -->
+      <div class="timeline-end reveal">
+        <div class="timeline-dot-end"></div>
+        <span>Learning & Growing Every Day</span>
+      </div>
+    </div>
+  </div>
+</div>

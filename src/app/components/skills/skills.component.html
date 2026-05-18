@@ -1,0 +1,55 @@
+<div class="skills section-padding">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Technical Skills</span>
+      <h2 class="section-title">
+        The Stack I <span class="gradient-text">Build With</span>
+      </h2>
+      <p class="section-subtitle">
+        A curated set of technologies I use to build robust, scalable, and performant applications.
+      </p>
+    </div>
+
+    <!-- Skill Categories -->
+    <div class="categories-grid">
+      @for (cat of categories; track cat.category; let i = $index) {
+        <div class="category-card glass-card reveal" [style.transition-delay]="(i * 0.1) + 's'">
+          <div class="category-header" [style.--accent]="cat.accent">
+            <span class="category-icon">{{ cat.icon }}</span>
+            <h3 class="category-name">{{ cat.category }}</h3>
+            <div class="category-line" [style.background]="cat.accent"></div>
+          </div>
+
+          <div class="skills-list">
+            @for (skill of cat.skills; track skill.name) {
+              <div class="skill-item">
+                <div class="skill-info">
+                  <i [class]="skill.icon + ' skill-devicon'" [style.color]="skill.color"></i>
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-pct">{{ skill.level }}%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill"
+                       [style.width]="skill.level + '%'"
+                       [style.background]="'linear-gradient(90deg, ' + cat.accent + ', ' + skill.color + ')'">
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Bottom badges -->
+    <div class="extra-skills reveal">
+      <span class="extra-label">Also familiar with:</span>
+      <div class="badge-row">
+        @for (s of ['Entity Framework Core', 'REST APIs', 'MVC Pattern', 'Agile / Scrum', 'CI/CD Pipelines', 'Python', 'OpenCV', 'TensorFlow', 'NLP', 'Clean Architecture']; track s) {
+          <span class="tech-badge">{{ s }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</div>
