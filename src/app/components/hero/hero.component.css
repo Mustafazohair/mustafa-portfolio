@@ -121,7 +121,7 @@
 
 .name {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-size: clamp(1.9rem, 7vw, 4rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -343,4 +343,17 @@ code { display: block; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { justify-content: center; }
   .badge-1, .badge-3 { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 80px 0 40px; }
+  .hero-tagline { font-size: 0.95rem; }
+  .hero-stats { gap: 14px; }
+  .stat-value { font-size: 1.3rem; }
+  .stat-divider { height: 28px; }
+  .code-body { font-size: 0.76rem; padding: 16px; }
+  .scroll-hint { display: none; }
+  .blob-1 { width: 300px; height: 300px; left: -100px; }
+  .blob-2 { width: 250px; height: 250px; right: -80px; }
+  .blob-3 { width: 200px; height: 200px; }
 }

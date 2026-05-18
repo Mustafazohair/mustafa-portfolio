@@ -150,3 +150,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .section-header { margin-bottom: 40px; }
+  .category-card { padding: 20px 16px; }
+  .extra-skills { padding: 20px 16px; }
+}

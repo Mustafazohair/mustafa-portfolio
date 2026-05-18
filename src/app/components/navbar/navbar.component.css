@@ -253,3 +253,8 @@
   .hamburger { display: flex; }
   .theme-toggle { margin-left: 0; }
 }
+
+@media (max-width: 480px) {
+  .nav-container { padding: 0 16px; gap: 12px; }
+  .nav-logo { font-size: 1.1rem; }
+}

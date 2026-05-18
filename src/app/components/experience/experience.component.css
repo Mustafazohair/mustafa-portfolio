@@ -264,3 +264,13 @@
     grid-row: 1;
   }
 }
+
+@media (max-width: 480px) {
+  .section-header { margin-bottom: 40px; }
+  .exp-card { padding: 20px 16px; gap: 16px; }
+  .timeline-item { margin-bottom: 32px; gap: 0 12px; }
+  .exp-role { font-size: 0.95rem; }
+  .exp-desc { font-size: 0.84rem; }
+  .achievements-list li { font-size: 0.82rem; }
+  .company-logo { width: 44px; height: 44px; font-size: 1.2rem; }
+}

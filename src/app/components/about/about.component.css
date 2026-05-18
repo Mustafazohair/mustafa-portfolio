@@ -222,4 +222,11 @@
   .highlights-grid {
     grid-template-columns: 1fr;
   }
+  .section-header { margin-bottom: 40px; }
+  .highlight-card { padding: 20px 16px; }
+  .profile-card { padding: 16px; }
+  .profile-row { padding: 10px 0; }
+  .profile-val { font-size: 0.82rem; }
+  .about-actions { flex-direction: column; }
+  .about-actions .btn { text-align: center; justify-content: center; }
 }

@@ -313,10 +313,20 @@ body .spinner {
   padding: 0;
 }
 
+/* Ensure all Angular host elements are block-level and don't overflow */
+app-root, app-navbar, app-hero, app-about, app-skills,
+app-experience, app-projects, app-tech-stack,
+app-contact, app-footer, app-loading {
+  display: block;
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -327,6 +337,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* ---- Custom Scrollbar ---- */
@@ -656,4 +668,7 @@ body::after {
 
 @media (max-width: 480px) {
   :root { --section-padding: 48px 0; }
+  .container { padding: 0 16px; }
+  .btn { padding: 12px 20px; font-size: 0.88rem; }
+  .section-subtitle { font-size: 0.95rem; }
 }

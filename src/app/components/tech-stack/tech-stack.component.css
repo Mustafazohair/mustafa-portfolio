@@ -78,3 +78,10 @@
   font-weight: 500;
   color: var(--th-t4);
 }
+
+@media (max-width: 480px) {
+  .section-header { margin-bottom: 36px; }
+  .tech-pill { padding: 10px 16px; gap: 8px; }
+  .tech-pill i { font-size: 1.2rem; }
+  .tech-pill span { font-size: 0.82rem; }
+}
