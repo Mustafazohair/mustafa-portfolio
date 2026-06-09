@@ -1,12 +1,27 @@
 <div class="loading-screen" [class.hidden]="!visible">
+
   <div class="loader-inner">
+
+    <!-- Logo -->
     <div class="logo-mark">
       <span class="logo-lt">&lt;</span>
       <span class="logo-name">MZ</span>
       <span class="logo-rt">/&gt;</span>
     </div>
-    <div class="dots">
-      <span></span><span></span><span></span>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div
+        class="progress-bar"
+        [style.width.%]="progress">
+      </div>
     </div>
+
+    <!-- Percentage -->
+    <div class="progress-text">
+      {{ progress }}%
+    </div>
+
   </div>
+
 </div>
